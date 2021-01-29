@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/buttonmasher/static/css/main.0364a810.chunk.css",
+    "main.js": "/buttonmasher/static/js/main.2efe884c.chunk.js",
+    "main.js.map": "/buttonmasher/static/js/main.2efe884c.chunk.js.map",
+    "runtime-main.js": "/buttonmasher/static/js/runtime-main.81f6e575.js",
+    "runtime-main.js.map": "/buttonmasher/static/js/runtime-main.81f6e575.js.map",
+    "static/css/2.150d169a.chunk.css": "/buttonmasher/static/css/2.150d169a.chunk.css",
+    "static/js/2.33f09bf9.chunk.js": "/buttonmasher/static/js/2.33f09bf9.chunk.js",
+    "static/js/2.33f09bf9.chunk.js.map": "/buttonmasher/static/js/2.33f09bf9.chunk.js.map",
+    "static/js/3.5c08a742.chunk.js": "/buttonmasher/static/js/3.5c08a742.chunk.js",
+    "static/js/3.5c08a742.chunk.js.map": "/buttonmasher/static/js/3.5c08a742.chunk.js.map",
+    "index.html": "/buttonmasher/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/buttonmasher/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.0364a810.chunk.css.map": "/buttonmasher/static/css/main.0364a810.chunk.css.map",
+    "static/js/2.33f09bf9.chunk.js.LICENSE.txt": "/buttonmasher/static/js/2.33f09bf9.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/buttonmasher/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.81f6e575.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.33f09bf9.chunk.js",
+    "static/css/main.0364a810.chunk.css",
+    "static/js/main.2efe884c.chunk.js"
+  ]
+}
