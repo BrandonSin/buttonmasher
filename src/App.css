@@ -1,15 +1,16 @@
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 60vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 2s linear;
   }
 }
 
@@ -28,11 +29,89 @@
   color: #61dafb;
 }
 
+.sprite-size {
+  position: absolute;
+  min-width: 10%;
+  min-height: 10%;
+  max-height: 100%;
+  max-width: 100%;
+  top: 75%;
+  left: 40%;
+  
+}
+.sprite-size1 {
+  position: absolute;
+  min-width: 15%;
+  min-height: 10%;
+  max-height: 100%;
+  max-width: 100%;
+  top: 70%;
+  left: 50%;
+  
+  
+}
+.progress {
+  width: 10%;
+  height: 10%;
+}
+/*reference button from https://jsfiddle.net/willwood/gjf139z4/5/ */
+.pulsingButton {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  white-space: nowrap;
+  display: block;
+  margin: 50px auto;
+  padding: 10px;
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  border-radius: 50%;
+  background-color: #FF0000;
+  -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  font-size: 22px;
+  font-weight: normal;
+  font-family: sans-serif;
+  text-decoration: none !important;
+  color: #ffffff;
+  transition: all 300ms ease-in-out;
+}
+
+
+/* Animation */
+
+@-webkit-keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+  }
+}
+
+@-moz-keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+  }
+}
+
+@-ms-keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+  }
+}
+
+@keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+  }
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(45deg);
   }
 }
