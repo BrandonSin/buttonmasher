@@ -12,6 +12,7 @@ import spriteDead from "./images/spriteSheet/heroDead.png";
 
 
 
+
 function Attack() {
     const [gamePhase, setgamePhase] = React.useState(0);
     const [clickCounter, setClickCounter] = React.useState(0);
@@ -56,7 +57,7 @@ function Attack() {
         }
     
     }
-//https://codesandbox.io/s/simple-react-countdown-timer-zyfr0?file=/src/index.tsx 
+//https://codesandbox.io/s/simple-react-countdown-timer-zyfr0?file=/src/index.tsx for the logic of the timecounter
     const [counter, setCounter] = React.useState(15);
         React.useEffect(() => {
             console.log("counter" + gamePhase);
@@ -93,8 +94,9 @@ function Attack() {
             <div>{text1}</div>
             <a onClick={attackCharge} className="pulsingButton">
             </a>
-            <ProgressBar variant ="danger" now={Health}/>
             
+            <ProgressBar variant="danger" now={Health} />
+             
             <a className ="sprite-size" style={{visibility: gamePhase == 0 || gamePhase == 3 ? 'visible' : 'hidden'}}>
 
                 <Spritesheet
