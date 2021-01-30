@@ -4,7 +4,7 @@ import Spritesheet from 'react-responsive-spritesheet';
 import spriteAttack from "./images/spriteSheet/attackSheet.png";
 import spriteIdle from "./images/spriteSheet/idleSheet.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import { ProgressBar } from 'react-bootstrap';
 import wormAttack from "./images/spriteSheet/Attack.png";
 import wormDeath from "./images/spriteSheet/death1.png";
 import spriteDead from "./images/spriteSheet/heroDead.png";
