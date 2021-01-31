@@ -27,7 +27,6 @@ function Attack() {
 
 
     function attackCharge(){
-        console.log("Game Phase " + gamePhase);
         setClickCounter(clickCounter + 0.1);
         setHealth(Health - clickCounter);
         //Since progressBar cannot display negative value, following condition will set health to 0 
@@ -35,8 +34,7 @@ function Attack() {
             setHealth(0);
             setAttack(1);
         }
-        console.log("Mouse Clicked " + clickCounter);
-        
+        //start game
         if(gamePhase == 0){
             setgamePhase(1);
             setCounter(14);
@@ -44,16 +42,19 @@ function Attack() {
 
             
         }
+        //If game ended Click to restart
         if(gamePhase == 3 || counter == 0){
             setgamePhase(0);
             setHealth(100);
             setClickCounter(0);
+            setCounter(15);
             setText("Mash the Red button to Attack the Monster Before the Timer Ends");
             setText1("Start");
             setAttack(0);
-            setCounter(15);
             
         }
+    
+        //if game resulted in a win
         if(attack == 1 && gamePhase == 1){
             setgamePhase(3);
             setText1("Ember Restored");
@@ -62,32 +63,39 @@ function Attack() {
         }
     
     }
-//https://codesandbox.io/s/simple-react-countdown-timer-zyfr0?file=/src/index.tsx for the logic of the timecounter
+//https://dev.to/zhiyueyi/how-to-create-a-simple-react-countdown-timer-4mc3 for the logic of the timecounter
     const [counter, setCounter] = React.useState(15);
-        React.useEffect(() => {
-            console.log("counter" + gamePhase);
-            if(gamePhase == 1){
-               counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-            }
         
+    
+    React.useEffect(() => {
+            
+            console.log("Time Counter: " + counter );
+            if(gamePhase == 1){
+                const gameTimer =
+                    counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
+                return () => clearInterval(gameTimer);
+            }
+            if(counter == 0){
+                setText("You Died, Press the Red Button to Try Again");
+                setText1("Souls Lost");       
+            }
+            
         },[counter]);
             
-    
-
-    
-
+   
     const [text, setText] = React.useState("Mash the Red button to Attack the Monster Before the Timer Ends");
     const [text1, setText1] = React.useState("Start");
 
-    React.useEffect(() =>{
-        if(counter == 0){
-            setText("You Died, Press the Red Button to Try Again");
-            setText1("Souls Lost");
-            setgamePhase(1);
+    //if game result in loss
+    // React.useEffect(() =>{
+    //     if(counter == 0){
+    //         setText("You Died, Press the Red Button to Try Again");
+    //         setText1("Souls Lost");
+    //         setgamePhase(1);
 
             
-        }
-    })
+    //     }
+    // },[text, text1]);
     
         
     return (
@@ -145,6 +153,7 @@ function Attack() {
                     loop = {true}  
                 />
             </a>
+            {/* When worm is attacking */}
             <a className ="sprite-size1" style={{visibility: gamePhase == 1 || counter == 0? 'visible' : 'hidden'}}>
                 <Spritesheet
                     image={wormAttack}//spriteIdle, spriteAttack
@@ -157,6 +166,7 @@ function Attack() {
                     loop = {true}  
                 />
                 </a>
+                {/* when worm is dead */}
                 <a className ="sprite-size1" style={{visibility:  gamePhase == 3 ? 'visible' : 'hidden'}}>
                 <Spritesheet
                     image={wormDeath}//spriteIdle, spriteAttack
